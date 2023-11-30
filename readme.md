@@ -35,11 +35,11 @@ PRINT_AMOUNT=10 java -cp wordcount.jar com.wordcount.Main "./t8.shakespeare.txt"
 
 _Tested on Java 21 and Maven 3.8.4 on MacOS._
 
-The solution was tested on 20GB file (large than RAM). It took around around 5 mins to process it on M1 Macbook Pro. Further improvements can be made by parallelizing the processing of the file. One of the options is to split the file into chunks and process them in parrallel, then aggregrate result. Chunk amount should correspond to the number of available cores for a single machine scenario. For testing purposes `split -n 4 large.txt` was used to split the file into 4 chunks and run 4 instances of the program in parrallel, it took around 1.5 mins to process 20GB of text stream.
+The solution was tested on 20GB file (large than RAM). It took around around 5 mins to process it on M1 Macbook Pro. Further improvements can be made by parallelizing the processing of the file. One of the options is to split the file into chunks and process them in parrallel, then aggregrate result. Chunk amount should correspond to the number of available cores for a single machine scenario. For testing purposes `split -n 4 large.txt` was used to split the file into 4 chunks and run 4 instances of the program in parrallel, it took around 1.5 mins to process 20GB of text.
 
 ## Further Improvements
 
 - Parallelize the processing of the file for large files
-- Add testig library (e.g. JUnit) and write unit tests
+- Add testing library (e.g. JUnit) and write unit tests
 - Add logging library (e.g. Log4j) and add logging
 - Use command line library (e.g. Apache Commons CLI) to parse command line arguments

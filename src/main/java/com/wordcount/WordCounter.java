@@ -36,7 +36,7 @@ public class WordCounter {
         return null;
     }
 
-    private LinkedHashMap<String, Long> sort(Map<String, Long> words) {
+    private static LinkedHashMap<String, Long> sort(Map<String, Long> words) {
         LinkedHashMap<String, Long> sortedWords = new LinkedHashMap<>();
         words.entrySet()
                 .stream()
