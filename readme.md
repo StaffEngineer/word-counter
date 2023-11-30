@@ -25,11 +25,17 @@ you: 10630
 that: 10487
 ```
 
+There is built jar file in the root of the project. It can be used to run the program without maven. Like this:
+
+```java
+PRINT_AMOUNT=10 java -cp wordcount.jar com.wordcount.Main "./t8.shakespeare.txt"
+```
+
 ## Testing
 
 _Tested on Java 21 and Maven 3.8.4 on MacOS._
 
-The solution was tested on 20GB file (large than RAM). It took around around 5 mins to process it on M1 Macbook Pro. Further improvements can be made by parallelizing the processing of the file. One of the options is to split the file into chunks and process them in parrallel, then aggregrate result. Chunk amount should correspond to the number of available cores for a single machine scenario. For testing purposes I've used `split -n 4 big.txt` to split the file into 4 chunks and run 4 instances of the program in parrallel, it took around 1.5 mins to process 20GB of text.
+The solution was tested on 20GB file (large than RAM). It took around around 5 mins to process it on M1 Macbook Pro. Further improvements can be made by parallelizing the processing of the file. One of the options is to split the file into chunks and process them in parrallel, then aggregrate result. Chunk amount should correspond to the number of available cores for a single machine scenario. For testing purposes `split -n 4 large.txt` was used to split the file into 4 chunks and run 4 instances of the program in parrallel, it took around 1.5 mins to process 20GB of text stream.
 
 ## Further Improvements
 
