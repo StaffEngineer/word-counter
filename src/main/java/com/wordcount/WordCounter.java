@@ -34,7 +34,6 @@ public class WordCounter {
 
             return sort(words);
         } catch (IOException e) {
-            // Handle the exception according to your use case
             e.printStackTrace();
         }
         return null;
